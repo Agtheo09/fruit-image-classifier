@@ -23,7 +23,6 @@ The goal was to evaluate the impact of different deep learning techniques, inclu
 - Dropout
 - Optimizer tuning
 - Weight decay
-- Label smoothing
 - Learning rate scheduling
 - Transfer learning and fine-tuning
 
@@ -76,7 +75,7 @@ The experiments were:
 | Baseline CNN                     | Original CNN architecture                                                                           |    **74%** |
 | CNN v2                           | Wider convolutions + data augmentation                                                              |    **78%** |
 | CNN v3                           | Wider convolutions + data augmentation + Batch Normalization + Dropout                              |  **81.5%** |
-| CNN v4                           | AdamW optimizer + weight decay + label smoothing + learning rate scheduler                          |    **86%** |
+| CNN v4                           | AdamW optimizer + weight decay + learning rate scheduler                                            |    **86%** |
 | ResNet18 Frozen                  | Pretrained ResNet18 + ImageNet normalization + 224×224 input + frozen backbone + dropout classifier | **93.99%** |
 | ResNet18 Fine-Tuning             | Last ResNet layers unfrozen and trained                                                             |  **95.5%** |
 | ResNet18 Fine-Tuning (25 epochs) | Extended fine-tuning training                                                                       |    **98%** |
@@ -199,24 +198,6 @@ https://pytorch.org/docs/stable/generated/torch.optim.AdamW.html
 ## Weight Decay
 
 Weight decay penalizes large weights and helps prevent overfitting.
-
-## Label Smoothing
-
-Instead of training with completely certain labels:
-
-```
-Correct class = 1.0
-Wrong classes = 0.0
-```
-
-label smoothing creates softer targets:
-
-```
-Correct class = 0.9
-Other classes = 0.025
-```
-
-This prevents the model from becoming overly confident.
 
 ## Learning Rate Scheduler
 
@@ -375,15 +356,15 @@ Confusion matrix:
 
 The complete improvement path is summarized below:
 
-| Model                                                       | Accuracy |
-| ----------------------------------------------------------- | -------: |
-| Baseline CNN                                                |      74% |
-| CNN with wider convolutions and augmentation                |      78% |
-| CNN with Batch Normalization and Dropout                    |    81.5% |
-| CNN with AdamW, weight decay, label smoothing and scheduler |      86% |
-| Frozen ResNet18 Transfer Learning                           |   93.99% |
-| ResNet18 Fine-Tuning                                        |    95.5% |
-| ResNet18 Fine-Tuning (25 epochs)                            |      98% |
+| Model                                        | Accuracy |
+| -------------------------------------------- | -------: |
+| Baseline CNN                                 |      74% |
+| CNN with wider convolutions and augmentation |      78% |
+| CNN with Batch Normalization and Dropout     |    81.5% |
+| CNN with AdamW, weight decay and scheduler   |      86% |
+| Frozen ResNet18 Transfer Learning            |   93.99% |
+| ResNet18 Fine-Tuning                         |    95.5% |
+| ResNet18 Fine-Tuning (25 epochs)             |      98% |
 
 The overall improvement:
 
