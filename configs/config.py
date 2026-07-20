@@ -19,14 +19,14 @@ TEST_IMG_DIR = "imgs/dataset/test_imgs"
 
 # ----------------------------------- Training ----------------------------------- #
 
-BATCH_SIZE = 16
+BATCH_SIZE = 8
 NUM_WORKERS = 4
-EPOCHS = 2
+EPOCHS = 10
 
 LEARNING_RATE = 0.0001
 WEIGHT_DECAY = 0.0001
 
 # ------------------------------------ Model ------------------------------------ #
 
-MODEL_NAME = "resnet18_finetuned_layer4"
-MODEL_PATH = "./models/resnet182layersUnFreezed25epochNoLabelSmoothing.pth"
+MODEL_NAME = "model_resnet18_transfer_learning"
+MODEL_PATH = f"./models/{MODEL_NAME}.pth"

@@ -60,6 +60,28 @@ The task is formulated as a multi-class image classification problem.
 
 ---
 
+# Getting Started
+
+## Installation
+
+Clone the repository:
+
+```
+git clone https://github.com/Agtheo09/fruit-image-classifier.git
+```
+
+Install the required dependencies:
+```
+pip install -r requirements.txt
+```
+The project was developed with:
+
+- Python 3.10
+- PyTorch 2.13
+- Torchvision 0.28
+- NumPy 1.26
+- Scikit-learn 1.7
+
 # Experimental Methodology
 
 Instead of immediately applying transfer learning, a custom CNN was first developed and optimized. Each experiment introduced specific improvements to measure their individual impact.
@@ -574,7 +596,23 @@ Includes:
 - MobileNet
 - Vision Transformers
 
----
+# Single Image Prediction
+
+A trained model can also be tested on individual images.
+
+Run:
+```
+python prediction.py --image path/to/image.jpg
+```
+Example output:
+
+Prediction probabilities:
+
+- Apple: 97.12%
+- Banana: 0.41%
+- Orange: 1.02%
+- Pineapple: 0.83%
+- Watermelon: 0.62%
 
 # Conclusion
 
