@@ -1,4 +1,9 @@
+
+
+<div align="center">
+
 # Fruit Image Classification Using CNNs and Transfer Learning by Agtheo09
+by **Agtheo09**
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.x-red?logo=pytorch)
@@ -6,6 +11,8 @@
 ![Deep Learning](https://img.shields.io/badge/Deep%20Learning-CNN%20%7C%20Transfer%20Learning-green)
 ![Model](https://img.shields.io/badge/Model-ResNet18-purple)
 ![Accuracy](https://img.shields.io/badge/Test%20Accuracy-98%25-brightgreen)
+
+</div>
 
 This project explores the development and optimization of a deep learning image classification system for five fruit categories:
 
